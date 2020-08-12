@@ -16,7 +16,7 @@ export const fetchUser = (id: String): ThunkAction<any, any, any, Action> => {
             dispatch(setUser(res.data))
         })
         .catch((err: any) => {
-            let error = err.response.data.message
+            let error = err.message
             dispatch(failedToSetUser(error))
         })
     }

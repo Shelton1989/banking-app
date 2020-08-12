@@ -1,8 +1,49 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Introduction
+
+The project is a simple user dashboard that satifies the following:
+1. Two Column layout with a fixed sidebar.
+2. Two routes named `dahsboard` and `settings`
+3. REST API call to fetch data.
+4. Data is persisted to both local storage and app state.
+4. Unit tests to tests the REST API call.
+5. Use of [Ant Design](https://ant.design)
+
+Furthermore, the following is satisfied:
+- Secrets are stored in an `.env` file.
+- This is a Typescript implementation of React.
+- Start scripts automatically read from the created `.env` file.
+
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). Using the following command
+```bash
+yarn create react-app --template typescript
+```
+## Project Setup
+
+clone this repository by running the following command
+```bash
+git clone https://github.com/Shelton1989/qdb.git
+```
+**Important note: Do not skip this step or the REST API call will fail.**
+
+In the project root directory, create a `.env` file with the following entry:
+```txt
+REACT_APP_BASE_URL= <BASE_API_URL>
+```
+where `<BASE_API_URL>` is the url for accessing the RESTful service.
+
+Run 
+```bash
+yarn install
+```
+to install the dependencies.
 
 ## Available Scripts
 
-In the project directory, you can run:
+In the project root directory, please run:
+
+### `yarn install`
+This command will install the dependencies.
 
 ### `yarn start`
 
@@ -37,8 +78,6 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+## Tests
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
