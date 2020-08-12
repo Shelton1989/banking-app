@@ -30,7 +30,7 @@ In the project root directory, create a `.env` file with the following entry:
 ```txt
 REACT_APP_BASE_URL= <BASE_API_URL>
 ```
-where `<BASE_API_URL>` is the url for accessing the RESTful service.
+where `<BASE_API_URL>` is the base url e.g. `https://www.example.com/` for accessing the RESTful service. Please include the trailing slash.
 
 Run 
 ```bash
