@@ -9,15 +9,15 @@ import {
 } from 'redux-thunk'
 
 // Actions
-export const fetchUser = (id: String): ThunkAction<any, any, any, Action> => {
-    return dispatch => {
+export const fetchUser = (id: Number): ThunkAction<any, any, any, Action> => {
+    return (dispatch: any) => {
         dispatch(loading(true))
-        api.get(`users/${id}`).then((res: any) => {
-            dispatch(setUser(res.data))
+        return api.get(`users/${id}`).then((res: any) => {
+            return dispatch(setUser(res.data))
         })
         .catch((err: any) => {
             let error = err.message
-            dispatch(failedToSetUser(error))
+            return dispatch(failedToSetUser(error))
         })
     }
 }
@@ -25,7 +25,7 @@ export const fetchUser = (id: String): ThunkAction<any, any, any, Action> => {
 // Mutations
 type mutation = (payload: any) => types.ActionTypes
 
-const setUser: mutation = (payload: types.User) => {
+export const setUser: mutation = (payload: types.User) => {
     return {
         type: types.SET_USER,
         payload: payload,
@@ -33,7 +33,7 @@ const setUser: mutation = (payload: types.User) => {
     }
 }
 
-const failedToSetUser: mutation = (payload: String) => {
+export const failedToSetUser: mutation = (payload: String) => {
     return {
         type: types.FAILED_TO_SET_USER,
         payload: {
@@ -43,7 +43,7 @@ const failedToSetUser: mutation = (payload: String) => {
     }
 }
 
-const loading: mutation = (payload: Boolean) => {
+export const loading: mutation = (payload: Boolean) => {
     return {
         type: types.LOADING,
         payload: {

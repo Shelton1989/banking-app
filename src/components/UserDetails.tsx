@@ -50,7 +50,7 @@ const UserDetails: React.FC<{fetchUser: any}>= ({fetchUser}) => {
         website,
         company
     } = useSelector((state: RootState) => state.user.user)
-    
+
     return (
         <div className="site-layout-background">
             <Row justify="space-around" gutter={[20, 20]} >
@@ -72,7 +72,7 @@ const UserDetails: React.FC<{fetchUser: any}>= ({fetchUser}) => {
                     Username:
                 </Col>
                 <Col span={12} >
-                    <Text type="warning" strong>{username}</Text>
+                    <Text type="warning" strong data-testid="username">{username}</Text>
                 </Col>
             </Row>
             <Row gutter={[20, 5]} >
@@ -80,7 +80,7 @@ const UserDetails: React.FC<{fetchUser: any}>= ({fetchUser}) => {
                     Name:
                 </Col>
                 <Col span={12} >
-                    <Text type="warning" strong>{name}</Text>
+                    <Text type="warning" data-testid="name" strong>{name}</Text>
                 </Col>
             </Row>
             <Row gutter={[20, 5]} >
@@ -88,7 +88,7 @@ const UserDetails: React.FC<{fetchUser: any}>= ({fetchUser}) => {
                     Email:
                 </Col>
                 <Col span={12} >
-                    <Text type="warning" strong>{email}</Text>
+                    <Text type="warning" data-testid="email" strong>{email}</Text>
                 </Col>
             </Row>
             <Row gutter={[20, 5]} >
@@ -96,7 +96,7 @@ const UserDetails: React.FC<{fetchUser: any}>= ({fetchUser}) => {
                     Phone:
                 </Col>
                 <Col span={12} >
-                    <Text type="warning" strong>{phone}</Text>
+                    <Text type="warning" data-testid="phone" strong>{phone}</Text>
                 </Col>
             </Row>
             <Row gutter={[20, 5]} >
@@ -104,7 +104,7 @@ const UserDetails: React.FC<{fetchUser: any}>= ({fetchUser}) => {
                     Website:
                 </Col>
                 <Col span={12} >
-                    <Text type="warning" strong><a href={`http://${website}`} target="_blank">{website}</a></Text>
+                    <Text type="warning" data-testid="website" strong><a href={`http://${website}`} target="_blank">{website}</a></Text>
                 </Col>
             </Row>
             <Divider orientation="left" >Address</Divider>
@@ -113,7 +113,7 @@ const UserDetails: React.FC<{fetchUser: any}>= ({fetchUser}) => {
                     Home:
                 </Col>
                 <Col span={12} >
-                    <Text type="warning" strong>{address?.suite}, {address?.street}, {address?.city}, {address?.zipcode}</Text>
+                    <Text type="warning" data-testid="address" strong>{address?.suite}, {address?.street}, {address?.city}, {address?.zipcode}</Text>
                 </Col>
             </Row>
             <Divider orientation="left" >Company</Divider>
@@ -122,7 +122,7 @@ const UserDetails: React.FC<{fetchUser: any}>= ({fetchUser}) => {
                     Name:
                 </Col>
                 <Col span={12} >
-                    <Text type="warning" strong>{company?.name}</Text>
+                    <Text type="warning" data-testid="company-name" strong>{company?.name}</Text>
                 </Col>
             </Row>
         </div>
