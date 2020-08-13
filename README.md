@@ -82,4 +82,8 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 
 ## Tests
 
-
+This project uses [Jest](https://jestjs.io) and the [React Testing Library](https://testing-library.com/) for the unit test implementation.
+To run the simple unit test run the following command:
+```bash
+yarn test
+```
